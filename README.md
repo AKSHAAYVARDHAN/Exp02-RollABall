@@ -25,8 +25,52 @@
 ### Step8: Create a new script -> Create a folder in project (Name: Scripts) Hierarchy -> Player -> Inspector-> AddComponent-> NewScripts-> PlayerController( Click create and Add), Copy the PlayerController and drag to Script folder, Double click the PlayerController file and type the coding
 
 ## Program:
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
+public class movement : MonoBehaviour
+{
+    public float xForce = 5.0f;
+    public float yForce = 100.0f;
+    public float zForce = 5.0f;
+    void Start()
+    {
+        
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
+        float x = 0.0f, y = 0.0f, z = 0.0f;
+        if(Input.GetKey(KeyCode.A))
+        {
+            x = x - xForce;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            x += xForce;
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            z = z - zForce;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            z += zForce;
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            y = yForce;
+        }
+        GetComponent<Rigidbody>().AddForce(x, y, z);
+    }
+}
+```
 ## Output:
+<img width="1919" height="1100" alt="image" src="https://github.com/user-attachments/assets/ea016ff0-7b6e-463c-8dcf-761c9e7a0896" />
 
 ## Result:
+Thus the given 3D application to roll a ball in unity is developed sucessfully
+
